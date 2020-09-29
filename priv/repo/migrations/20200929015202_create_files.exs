@@ -3,7 +3,7 @@ defmodule MantratronApi.Repo.Migrations.CreateFiles do
 
   def change do
     create table(:files) do
-      add :url, :string
+      add :uuid, :string
       add :duration, :integer
       add :user_id, references(:users, on_delete: :nothing)
 
@@ -11,5 +11,6 @@ defmodule MantratronApi.Repo.Migrations.CreateFiles do
     end
 
     create index(:files, [:user_id])
+    create index(:files, [:uuid])
   end
 end

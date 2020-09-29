@@ -7,7 +7,7 @@ defmodule MantratronApiWeb.Router do
 
   scope "/api", MantratronApiWeb do
     pipe_through :api
-    resources "/files", FileController, only: [:new]
+    resources "/files", FileController, only: [:new, :create]
   end
 
   # Enables LiveDashboard only for development

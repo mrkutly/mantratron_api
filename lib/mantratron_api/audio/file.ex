@@ -4,7 +4,7 @@ defmodule MantratronApi.Audio.File do
 
   schema "files" do
     field :duration, :integer
-    field :url, :string
+    field :uuid, :string
 
     belongs_to(:user, MantratronApi.Accounts.User)
 
@@ -14,7 +14,7 @@ defmodule MantratronApi.Audio.File do
   @doc false
   def changeset(file, attrs) do
     file
-    |> cast(attrs, [:url, :duration])
-    |> validate_required([:url, :duration])
+    |> cast(attrs, [:uuid, :duration])
+    |> validate_required([:uuid, :duration])
   end
 end
